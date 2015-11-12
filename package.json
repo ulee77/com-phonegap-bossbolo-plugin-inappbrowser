@@ -1,0 +1,47 @@
+{
+  "name": "com-phonegap-bossbolo-plugin-inappbrowser",
+  "version": "1.0.0",
+  "description": "打开新链接插件，打开方式有：调用本地浏览器、新建标签页、当前标签页打开",
+  "cordova": {
+    "id": "com-phonegap-bossbolo-plugin-inappbrowser",
+    "platforms": [
+      "android",
+      "amazon-fireos",
+      "ubuntu",
+      "ios",
+      "wp7",
+      "wp8",
+      "windows8",
+      "windows",
+      "firefoxos"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ulee77/com-phonegap-bossbolo-plugin-inappbrowser.git"
+  },
+  "keywords": [
+    "cordova",
+    "phonegap",
+    "bossbolo",
+    "BoloPlugin",
+    "boloPlugin",
+    "boloplugin",
+    "bolobrowser",
+    "boloBrowser",
+    "BoloBrowser",
+    "in",
+    "app",
+    "browser",
+    "inappbrowser",
+    "ecosystem:cordova"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.1.0"
+    }
+  ],
+  "author": "Apache Software Foundation",
+  "license": "Apache 2.0"
+}
