@@ -110,12 +110,12 @@ ref.executeScript(details, callback);
     - 如果注入脚本为`code`类型, 则得到其返回值并以`Array`类型返回单一参数. 如果执行的是多行脚本，则返回其最后一条语句返回值，或者最后一个表达式的值。
 
 - __ 示例代码
-
-    var ref = cordova.InAppBrowser.open('http://www.baidu.com', '_blank', 'location=yes');
-    ref.addEventListener('loadstop', function() {
-        ref.executeScript({file: "myscript.js"});
-    });
-
+```sh
+var ref = cordova.InAppBrowser.open('http://www.baidu.com', '_blank', 'location=yes');
+ref.addEventListener('loadstop', function() {
+    ref.executeScript({file: "myscript.js"});
+});
+```
 # insertCSS——CSS注入
 
 ```sh
@@ -129,9 +129,9 @@ ref.insertCSS(details, callback);
 - __callback__: 当样式表嵌入完成时的回调.
 
 - __ 示例代码
-
-    var ref = cordova.InAppBrowser.open('http://www.baidu.com', '_blank', 'location=yes');
-    ref.addEventListener('loadstop', function() {
-        ref.insertCSS({file: "mystyles.css"});
-    });
-
+```sh
+var ref = cordova.InAppBrowser.open('http://www.baidu.com', '_blank', 'location=yes');
+ref.addEventListener('loadstop', function() {
+    ref.insertCSS({file: "mystyles.css"});
+});
+```
