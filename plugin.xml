@@ -64,6 +64,8 @@
         <resource-file src="src/android/res/drawable-mdpi/ic_action_remove.png" target="res/drawable-mdpi/ic_action_remove.png" />
         <resource-file src="src/android/res/drawable-xhdpi/ic_action_remove.png" target="res/drawable-xhdpi/ic_action_remove.png" />
         <resource-file src="src/android/res/drawable-xxhdpi/ic_action_remove.png" target="res/drawable-xxhdpi/ic_action_remove.png" />
+        
+        <resource-file src="src/android/res/drawable/back.png" target="res/drawable/back.png" />
 
     </platform>
 
@@ -74,8 +76,8 @@
             <clobbers target="window.open" />
         </js-module>
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="InAppBrowser"> 
-                <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
+            <feature name="BoloBrowser">
+                <param name="android-package" value="com.phonegap.bossbolo.plugin.inappbrowser.InAppBrowser"/>
             </feature>
         </config-file>
 
@@ -120,15 +122,16 @@
             <clobbers target="window.open" />
         </js-module>  
         <config-file target="config.xml" parent="/*">
-            <feature name="InAppBrowser">
+            <feature name="BoloBrowser">
                 <param name="ios-package" value="CDVInAppBrowser" /> 
             </feature>
         </config-file>
 
         <header-file src="src/ios/CDVInAppBrowser.h" />
 	    <source-file src="src/ios/CDVInAppBrowser.m" />
-	    
+<!--	    <resource-file src="src/ios/back.png" />-->
 	    <framework src="CoreGraphics.framework" />
+        <resource-file src="src/ios/BoloBrowser.bundle" />
     </platform>
 
     <!-- wp7 -->
@@ -142,7 +145,7 @@
             <clobbers target="window.open" />
         </js-module>
         <config-file target="config.xml" parent="/*">
-            <feature name="InAppBrowser">
+            <feature name="BoloBrowser">
                 <param name="wp-package" value="InAppBrowser"/>
             </feature>
         </config-file>
@@ -165,7 +168,7 @@
             <clobbers target="window.open" />
         </js-module>
         <config-file target="config.xml" parent="/*">
-            <feature name="InAppBrowser">
+            <feature name="BoloBrowser">
                 <param name="wp-package" value="InAppBrowser"/>
             </feature>
         </config-file>
