@@ -123,12 +123,12 @@
         </js-module>  
         <config-file target="config.xml" parent="/*">
             <feature name="BoloBrowser">
-                <param name="ios-package" value="CDVInAppBrowser" /> 
+                <param name="ios-package" value="BoloInAppBrowser" />
             </feature>
         </config-file>
 
-        <header-file src="src/ios/CDVInAppBrowser.h" />
-	    <source-file src="src/ios/CDVInAppBrowser.m" />
+        <header-file src="src/ios/BoloInAppBrowser.h" />
+	    <source-file src="src/ios/BoloInAppBrowser.m" />
 	    <framework src="CoreGraphics.framework" />
         <resource-file src="src/ios/Resources/BoloBrowser.bundle" />
     </platform>

@@ -27,13 +27,13 @@
     #import <Cordova/CDVWebViewDelegate.h>
 #endif
 
-@class CDVInAppBrowserViewController;
+@class BoloInAppBrowserViewController;
 
-@interface CDVInAppBrowser : CDVPlugin {
+@interface BoloInAppBrowser : CDVPlugin {
     BOOL _injectedIframeBridge;
 }
 
-@property (nonatomic, retain) CDVInAppBrowserViewController* inAppBrowserViewController;
+@property (nonatomic, retain) BoloInAppBrowserViewController* inAppBrowserViewController;
 @property (nonatomic, copy) NSString* callbackId;
 @property (nonatomic, copy) NSRegularExpression *callbackIdPattern;
 
@@ -44,7 +44,7 @@
 
 @end
 
-@interface CDVInAppBrowserOptions : NSObject {}
+@interface BoloInAppBrowserOptions : NSObject {}
 
 @property (nonatomic, assign) BOOL location;
 @property (nonatomic, assign) BOOL toolbar;
@@ -64,16 +64,16 @@
 @property (nonatomic, assign) BOOL hidden;
 @property (nonatomic, assign) BOOL disallowoverscroll;
 
-+ (CDVInAppBrowserOptions*)parseOptions:(NSString*)options;
++ (BoloInAppBrowserOptions*)parseOptions:(NSString*)options;
 
 @end
 
-@interface CDVInAppBrowserViewController : UIViewController <UIWebViewDelegate, CDVScreenOrientationDelegate>{
+@interface BoloInAppBrowserViewController : UIViewController <UIWebViewDelegate, CDVScreenOrientationDelegate>{
     @private
     NSString* _userAgent;
     NSString* _prevUserAgent;
     NSInteger _userAgentLockToken;
-    CDVInAppBrowserOptions *_browserOptions;
+    BoloInAppBrowserOptions *_browserOptions;
     
 #ifdef __CORDOVA_4_0_0
     CDVUIWebViewDelegate* _webViewDelegate;
@@ -94,7 +94,7 @@
 @property (nonatomic, strong) IBOutlet UIBarButtonItem* headerButton;
 
 @property (nonatomic, weak) id <CDVScreenOrientationDelegate> orientationDelegate;
-@property (nonatomic, weak) CDVInAppBrowser* navigationDelegate;
+@property (nonatomic, weak) BoloInAppBrowser* navigationDelegate;
 @property (nonatomic) NSURL* currentURL;
 
 - (void)close;
@@ -103,11 +103,11 @@
 - (void)showToolBar:(BOOL)show : (NSString *) toolbarPosition;
 - (void)setCloseButtonTitle:(NSString*)title;
 
-- (id)initWithUserAgent:(NSString*)userAgent prevUserAgent:(NSString*)prevUserAgent browserOptions: (CDVInAppBrowserOptions*) browserOptions;
+- (id)initWithUserAgent:(NSString*)userAgent prevUserAgent:(NSString*)prevUserAgent browserOptions: (BoloInAppBrowserOptions*) browserOptions;
 
 @end
 
-@interface CDVInAppBrowserNavigationController : UINavigationController
+@interface BoloInAppBrowserNavigationController : UINavigationController
 
 @property (nonatomic, weak) id <CDVScreenOrientationDelegate> orientationDelegate;
 

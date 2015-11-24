@@ -17,7 +17,7 @@
  under the License.
  */
 
-#import "CDVInAppBrowser.h"
+#import "BoloInAppBrowser.h"
 #import "Cordova/CDVConfigParser.h"
 #import <Cordova/CDVPluginResult.h>
 #import <Cordova/CDVUserAgentUtil.h>
@@ -34,17 +34,17 @@
 #define    FOOTER_HEIGHT (TOOLBAR_HEIGHT)
 //#define    FOOTER_HEIGHT ((TOOLBAR_HEIGHT) + (LOCATIONBAR_HEIGHT))
 
-#pragma mark CDVInAppBrowser
+#pragma mark BoloInAppBrowser
 
 UIColor * color = nil;
 NSString* header = nil;
 
-@interface CDVInAppBrowser () {
+@interface BoloInAppBrowser () {
     NSInteger _previousStatusBarStyle;
 }
 @end
 
-@implementation CDVInAppBrowser
+@implementation BoloInAppBrowser
 
 - (void)pluginInitialize
 {
@@ -121,7 +121,7 @@ NSString* header = nil;
 
 - (void)openInInAppBrowser:(NSURL*)url withOptions:(NSString*)options
 {
-    CDVInAppBrowserOptions* browserOptions = [CDVInAppBrowserOptions parseOptions:options];
+    BoloInAppBrowserOptions* browserOptions = [BoloInAppBrowserOptions parseOptions:options];
 
     if (browserOptions.clearcache) {
         NSHTTPCookie *cookie;
@@ -147,7 +147,7 @@ NSString* header = nil;
 
     if (self.inAppBrowserViewController == nil) {
         NSString* originalUA = [CDVUserAgentUtil originalUserAgent];
-        self.inAppBrowserViewController = [[CDVInAppBrowserViewController alloc] initWithUserAgent:originalUA prevUserAgent:[self.commandDelegate userAgent] browserOptions: browserOptions];
+        self.inAppBrowserViewController = [[BoloInAppBrowserViewController alloc] initWithUserAgent:originalUA prevUserAgent:[self.commandDelegate userAgent] browserOptions: browserOptions];
         self.inAppBrowserViewController.navigationDelegate = self;
 
         if ([self.viewController conformsToProtocol:@protocol(CDVScreenOrientationDelegate)]) {
@@ -223,7 +223,7 @@ NSString* header = nil;
 
     _previousStatusBarStyle = [UIApplication sharedApplication].statusBarStyle;
 
-    CDVInAppBrowserNavigationController* nav = [[CDVInAppBrowserNavigationController alloc]
+    BoloInAppBrowserNavigationController* nav = [[BoloInAppBrowserNavigationController alloc]
                                    initWithRootViewController:self.inAppBrowserViewController];
     nav.orientationDelegate = self.inAppBrowserViewController;
     nav.navigationBarHidden = YES;
@@ -271,7 +271,7 @@ NSString* header = nil;
 {
     if (!_injectedIframeBridge) {
         _injectedIframeBridge = YES;
-        // Create an iframe bridge in the new document to communicate with the CDVInAppBrowserViewController
+        // Create an iframe bridge in the new document to communicate with the BoloInAppBrowserViewController
         [self.inAppBrowserViewController.webView stringByEvaluatingJavaScriptFromString:@"(function(d){var e = _cdvIframeBridge = d.createElement('iframe');e.style.display='none';d.body.appendChild(e);})(document)"];
     }
 
@@ -462,13 +462,13 @@ NSString* header = nil;
 
 @end
 
-#pragma mark CDVInAppBrowserViewController
+#pragma mark BoloInAppBrowserViewController
 
-@implementation CDVInAppBrowserViewController
+@implementation BoloInAppBrowserViewController
 
 @synthesize currentURL;
 
-- (id)initWithUserAgent:(NSString*)userAgent prevUserAgent:(NSString*)prevUserAgent browserOptions: (CDVInAppBrowserOptions*) browserOptions
+- (id)initWithUserAgent:(NSString*)userAgent prevUserAgent:(NSString*)prevUserAgent browserOptions: (BoloInAppBrowserOptions*) browserOptions
 {
     self = [super init];
     if (self != nil) {
@@ -944,7 +944,7 @@ NSString* header = nil;
 
 @end
 
-@implementation CDVInAppBrowserOptions
+@implementation BoloInAppBrowserOptions
 
 - (id)init
 {
@@ -969,9 +969,9 @@ NSString* header = nil;
     return self;
 }
 
-+ (CDVInAppBrowserOptions*)parseOptions:(NSString*)options
++ (BoloInAppBrowserOptions*)parseOptions:(NSString*)options
 {
-    CDVInAppBrowserOptions* obj = [[CDVInAppBrowserOptions alloc] init];
+    BoloInAppBrowserOptions* obj = [[BoloInAppBrowserOptions alloc] init];
 
     // NOTE: this parsing does not handle quotes within values
     NSArray* pairs = [options componentsSeparatedByString:@","];
@@ -1008,7 +1008,7 @@ NSString* header = nil;
 
 @end
 
-@implementation CDVInAppBrowserNavigationController : UINavigationController
+@implementation BoloInAppBrowserNavigationController : UINavigationController
 
 - (void) viewDidLoad {
 
