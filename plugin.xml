@@ -129,9 +129,8 @@
 
         <header-file src="src/ios/CDVInAppBrowser.h" />
 	    <source-file src="src/ios/CDVInAppBrowser.m" />
-<!--	    <resource-file src="src/ios/back.png" />-->
 	    <framework src="CoreGraphics.framework" />
-        <resource-file src="src/ios/BoloBrowser.bundle" />
+        <resource-file src="src/ios/Resources/BoloBrowser.bundle" />
     </platform>
 
     <!-- wp7 -->
