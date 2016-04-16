@@ -2,7 +2,7 @@
 打开新链接插件，打开方式有：调用本地浏览器、新建标签页、当前标签页打开
 
 
-### 插件的安装、卸载
+#### 插件的安装、卸载
 ```sh
 phonegap plugin add https://github.com/ulee77/com-phonegap-bossbolo-plugin-inappbrowser.git
 ```
